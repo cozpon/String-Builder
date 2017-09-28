@@ -28,7 +28,7 @@ describe('normalString', function() {
 describe('reverse', function() {
   it("should return reversed string", function () {
     sb.reverse().should.equal("tset");
-  }); 
+  });
 });
 
 describe('capitalize', function() {
@@ -49,3 +49,8 @@ describe('append', function() {
   });
 });
 
+describe("toString", function() {
+  it("should have 'SB:' at beginning of string", function() {
+    sb.toString().should.equal("SB: test baz");
+  });
+});

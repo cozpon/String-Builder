@@ -24,6 +24,12 @@ class StringBuilder {
     stringArr.push(this.string);
     return stringArr;
   }
+
+  append(thing) {
+    let newArray = this.toArray();
+    newArray.push(thing);
+    return newArray.join(" ");
+  }
 }
 
 module.exports = StringBuilder;
