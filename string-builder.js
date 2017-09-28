@@ -33,6 +33,7 @@ class StringBuilder {
   }
 
   toString() {
+    console.log(this.string);
     return "SB: " + this.string;
   }
 }

@@ -8,7 +8,7 @@ const StringBuilder = require("../string-builder");
 let sb;
 
 before(function (){
-  sb = new StringBuilder('test');
+  sb = new StringBuilder('test pilot');
 });
 
 describe('StringBuilder', function () {
@@ -21,37 +21,48 @@ describe('StringBuilder', function () {
 describe('normalString', function() {
 
   it('should be a string', function () {
-    let sb = new StringBuilder('  test  ');
-    sb.normalString().should.equal('test');
+    let sb = new StringBuilder('');
+    expect(sb.normalString()).to.be.a('string');
+  });
+
+  it('should be spaceless on both ends', function () {
+    let sb = new StringBuilder('  test pilot  ');
+    sb.normalString().should.equal('test pilot');
   });
 });
 
+
 describe('reverse', function() {
   it("should return reversed string", function () {
-    sb.reverse().should.equal("tset");
+    sb.reverse().should.equal("tolip tset");
   });
 });
 
 describe('capitalize', function() {
   it("should capitalize first letter of every word", function() {
-    sb.capitalize().should.equal("Test");
+    sb.capitalize().should.equal("Test Pilot");
   });
 });
 
 describe('toArray', function() {
   it("should turn String into an array", function() {
-    sb.toArray().should.deep.equal(['test']);
+    sb.toArray().should.deep.equal(['test', 'pilot']);
   });
 });
 
 describe('append', function() {
   it("should append to end of string", function() {
-    sb.append("baz").should.equal("test baz");
+    sb.append("baz").should.equal("test pilot baz");
   });
 });
 
 describe("toString", function() {
+  before(function (){
+  sb = new StringBuilder('test pilot');
+ });
   it("should have 'SB:' at beginning of string", function() {
-    sb.toString().should.equal("SB: test baz");
+    sb.append("baz");
+    sb.toString().should.equal("SB: test pilot baz");
+
   });
 });
