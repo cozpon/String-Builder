@@ -31,4 +31,8 @@ describe('StringBuilder', function () {
     sb.capitalize().should.equal("Test");
   });
 
+  it("should turn String into an array", function() {
+    sb.toArray().should.equal(["test"]);
+  });
+
 });

@@ -13,6 +13,11 @@ class StringBuilder {
     let split = this.string.split('');
     return split.reverse().join('');
   }
+
+  capitalize() {
+    let capitalize = this.string;
+    return capitalize.charAt(0).toUpperCase() + capitalize.slice(1);
+  }
 }
 
 module.exports = StringBuilder;
