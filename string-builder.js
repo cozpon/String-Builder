@@ -6,7 +6,8 @@ class StringBuilder {
   }
 
   normalString(){
-    return this.string.trim();
+    this.string = this.string.trim();
+    return this.string;
   }
 
   reverse() {
@@ -15,8 +16,17 @@ class StringBuilder {
   }
 
   capitalize() {
-    let capitalize = this.string;
-    return capitalize.charAt(0).toUpperCase() + capitalize.slice(1);
+    this.normalString();
+
+    let split = this.string.split(' ');
+
+    for (let i = 0; i < split.length; i++) {
+      split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1);
+    }
+
+    this.string = split.join(' ');
+
+    return this.string;
   }
 
   toArray() {

@@ -6,9 +6,11 @@ const should = chai.should(); // short handing "should();"
 const StringBuilder = require("../string-builder");
 
 let sb;
+let sbThree;
 
 before(function (){
   sb = new StringBuilder('test pilot');
+  sbThree = new StringBuilder("test pilot foo");
 });
 
 describe('StringBuilder', function () {
@@ -41,6 +43,7 @@ describe('reverse', function() {
 describe('capitalize', function() {
   it("should capitalize first letter of every word", function() {
     sb.capitalize().should.equal("Test Pilot");
+    sbThree.capitalize().should.equal("Test Pilot Foo");
   });
 });
 
