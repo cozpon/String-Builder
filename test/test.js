@@ -19,6 +19,7 @@ describe('StringBuilder', function () {
 });
 
 describe('normalString', function() {
+
   it('should be a string', function () {
     let sb = new StringBuilder('  test  ');
     sb.normalString().should.equal('test');

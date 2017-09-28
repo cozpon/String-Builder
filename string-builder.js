@@ -28,7 +28,12 @@ class StringBuilder {
   append(thing) {
     let newArray = this.toArray();
     newArray.push(thing);
-    return newArray.join(" ");
+    this.string = newArray.join(" ");
+    return this.string;
+  }
+
+  toString() {
+    return "SB: " + this.string;
   }
 }
 
