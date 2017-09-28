@@ -27,4 +27,8 @@ describe('StringBuilder', function () {
     sb.reverse().should.equal("tset");
   });
 
+  it("should capitalize first letter of every word", function() {
+    sb.capitalize().should.equal("Test");
+  });
+
 });
