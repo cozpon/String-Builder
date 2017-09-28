@@ -12,9 +12,9 @@ describe('StringBuilder', function () {
     StringBuilder.should.be.a('function');
      });
 
-  let sb = StringBuilder('test');
   it('should be a string', function () {
-    expect('sb').to.be.typeof('String');
+    let sb = new StringBuilder('  test  ');
+    sb.string.should.equal('test');
   });
 });
 
