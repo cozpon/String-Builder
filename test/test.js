@@ -8,7 +8,7 @@ const StringBuilder = require("../string-builder");
 let sb;
 let sbThree;
 
-before(function (){
+beforeEach(function (){
   sb = new StringBuilder('test pilot');
   sbThree = new StringBuilder("test pilot foo");
 });
@@ -60,9 +60,7 @@ describe('append', function() {
 });
 
 describe("toString", function() {
-  before(function (){
-  sb = new StringBuilder('test pilot');
- });
+
   it("should have 'SB:' at beginning of string", function() {
     sb.append("baz");
     sb.toString().should.equal("SB: test pilot baz");

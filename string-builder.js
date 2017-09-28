@@ -30,7 +30,7 @@ class StringBuilder {
   }
 
   toArray() {
-    let stringArr = [];
+    let stringArr = [ ];
     stringArr.push(this.string);
     return stringArr;
   }
