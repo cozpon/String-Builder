@@ -18,6 +18,12 @@ class StringBuilder {
     let capitalize = this.string;
     return capitalize.charAt(0).toUpperCase() + capitalize.slice(1);
   }
+
+  toArray() {
+    let stringArr = [];
+    stringArr.push(this.string);
+    return stringArr;
+  }
 }
 
 module.exports = StringBuilder;

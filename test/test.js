@@ -39,7 +39,13 @@ describe('capitalize', function() {
 
 describe('toArray', function() {
   it("should turn String into an array", function() {
-    sb.toArray().should.equal(["test"]);
+    sb.toArray().should.deep.equal(['test']);
+  });
+});
+
+describe('append', function() {
+  it("should append to end of string", function() {
+    sb.append("baz").should.equal("test baz");
   });
 });
 
